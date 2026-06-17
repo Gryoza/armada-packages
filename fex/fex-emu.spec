@@ -51,6 +51,7 @@ SourceLicense: %{fex_license} %{sysroot_license}
 # skipped upstream 0004 (Nix-only).
 Patch1:     0001-fexcore-aarch64-workaround-llvm18-ice.patch
 Patch2:     0002-split-thunk-build-thunkgen-only.patch
+Patch3:     0003-hostlibs-use-sysroot-deps.patch
 Patch4:     0005-host-thunks-aarch64-char-signed-char.patch
 Patch5:     0006-thunkgen-march-armv8-sve.patch
 
