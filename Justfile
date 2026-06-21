@@ -8,7 +8,7 @@
 # unusably slow.
 
 registry := env("REGISTRY", "localhost/armada-packages")
-packages := "extest inputplumber fex mesa mangohud gamescope kernel"
+packages := "extest inputplumber fex mesa mangohud gamescope networkmanager kernel"
 
 import? 'Justfile.local'
 
