@@ -144,6 +144,10 @@ to a commit, or `armada` if it's original; a URL source with no `notes` is verba
   source: https://github.com/ROCKNIX/distribution/blob/e485495a942daba186d4a8543e18a1ad09c9a5d5/projects/ROCKNIX/devices/SM8550/patches/linux/v6_20260210_quic_utiwari_crypto_qce_add_runtime_pm_and_interconnect_bandwidth_scaling_support.patch
 - `patches/0063-gpu-drm-panel-add-pocket-fit-panel.patch`
   source: https://github.com/ROCKNIX/distribution/blob/e485495a942daba186d4a8543e18a1ad09c9a5d5/projects/ROCKNIX/devices/SM8650/patches/linux/0063-gpu-drm-panel-add-pocket-fit-panel.patch
+- `patches/0064-add-chipone-tddi-touchscreen.patch`
+  source: https://github.com/kevinkreiser/chipone_tddi/tree/ad4e075903c0c02728d22c3e87cc9f9e9a53be43
+  notes: driver sources verbatim; reworked from an out-of-tree module to an
+  in-tree build.
   notes: modified — rebased to apply after the SM8550 panels
 - `patches/sm8750-gpucc-clock-controller.patch`
   source: https://github.com/ROCKNIX/distribution/blob/e485495a942daba186d4a8543e18a1ad09c9a5d5/projects/ROCKNIX/devices/SM8750/patches/linux/0000_to_0025-linux-7-0_qcom-adreno_waiting-for-upstream.patch
@@ -213,3 +217,6 @@ to a commit, or `armada` if it's original; a URL source with no `notes` is verba
 - `dts/sm8650-ayaneo-common.dtsi.patch`
   source: armada
   notes: edits dts/sm8650-ayaneo-common.dtsi
+- `dts/sm8650-konkr-pf.dts.patch`
+  source: https://github.com/ROCKNIX/distribution/commit/242e3d0840cbe865fb152277e0feaca9ce48caef#diff-b5707cd5abd5a9b2bb7de35a0e9870e9c0c3ae9d71cb74166afbb438f4353606
+  notes: edits dts/sm8650-konkr-pf.dts
