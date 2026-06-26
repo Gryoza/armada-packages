@@ -18,7 +18,8 @@
 
 # ============== Panel power + backlight ==============
 0058_AYN-Odin2-Mini--backlight.patch
-0060-Add-Silergy-SY7758-backlight-driver.patch
+0060-backlight-Add-SY7758-LED-driver.patch
+0060-dt-bindings-silergy-sy7758.patch
 0061-regulator-add-sgm3804-i2c-regulator-for-panel-power-.patch
 
 # ============== Touchscreen ==============

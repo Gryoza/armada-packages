@@ -84,8 +84,10 @@ to a commit, or `armada` if it's original; a URL source with no `notes` is verba
   source: https://github.com/ROCKNIX/distribution/blob/e485495a942daba186d4a8543e18a1ad09c9a5d5/projects/ROCKNIX/devices/SM8550/patches/linux/0058_AYN-Odin2-Mini--backlight.patch
 - `patches/0059_AYN-Odin2-Mini--hynitron--cstxxx.patch`
   source: https://github.com/ROCKNIX/distribution/blob/e485495a942daba186d4a8543e18a1ad09c9a5d5/projects/ROCKNIX/devices/SM8550/patches/linux/0059_AYN-Odin2-Mini--hynitron--cstxxx.patch
-- `patches/0060-Add-Silergy-SY7758-backlight-driver.patch`
-  source: https://github.com/ROCKNIX/distribution/blob/e485495a942daba186d4a8543e18a1ad09c9a5d5/projects/ROCKNIX/devices/SM8550/patches/linux/0060-Add-Silergy-SY7758-backlight-driver.patch
+- `patches/0060-backlight-Add-SY7758-LED-driver.patch`
+  source: https://patchwork.kernel.org/project/dri-devel/patch/20260529-topic-sm8650-ayaneo-pocket-s2-sy7758-v5-2-03aacd49747c@linaro.org/
+- `patches/0060-dt-bindings-silergy-sy7758.patch`
+  source: https://patchwork.kernel.org/project/dri-devel/patch/20260529-topic-sm8650-ayaneo-pocket-s2-sy7758-v5-1-03aacd49747c@linaro.org/
 - `patches/0060-input-touchscreen-add-synaptics-dsx-driver.patch`
   source: https://github.com/ROCKNIX/distribution/blob/e485495a942daba186d4a8543e18a1ad09c9a5d5/projects/ROCKNIX/devices/SM8550/patches/linux/0060-input-touchscreen-add-synaptics-dsx-driver.patch
 - `patches/0060-input-touchscreen-add-synaptics-dsx-kconfig.patch`
@@ -203,6 +205,12 @@ to a commit, or `armada` if it's original; a URL source with no `notes` is verba
 - `dts/qcs8550-ayaneo-pocket-common.dtsi.patch`
   source: armada
   notes: edits dts/qcs8550-ayaneo-pocket-common.dtsi
+- `dts/qcs8550-ayaneo-pocketace.dts.patch`
+  source: armada
+  notes: edits dts/qcs8550-ayaneo-pocketace.dts
+- `dts/qcs8550-ayaneo-pockets2k.dts.patch`
+  source: armada
+  notes: edits dts/qcs8550-ayaneo-pockets2k.dts
 - `dts/qcs8550-ayaneo-pocketds.dts.patch`
   source: armada
   notes: edits dts/qcs8550-ayaneo-pocketds.dts
