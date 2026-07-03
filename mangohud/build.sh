@@ -5,7 +5,7 @@ source ./BASE.env
 source ../toolchain.env
 
 mkdir -p out; rm -f out/*
-podman run --rm -e VERSION="${VERSION}" -v "${REPO}:/work:Z" -w /work --platform linux/aarch64 "${BUILDER_IMAGE}" bash -euxc '
+podman run --rm -e VERSION="${VERSION}" -e ARMADA_MARCH="${ARMADA_MARCH}" -v "${REPO}:/work:Z" -w /work --platform linux/aarch64 "${BUILDER_IMAGE}" bash -euxc '
     export HOME=/tmp
     dnf -y install rpm-build rpmdevtools spectool "dnf-command(builddep)"
     rpmdev-setuptree
@@ -16,6 +16,8 @@ podman run --rm -e VERSION="${VERSION}" -v "${REPO}:/work:Z" -w /work --platform
 EOF
     cp /work/mangohud.spec ~/rpmbuild/SPECS/
     sed -i "s/^Version:.*/Version:        ${VERSION}/" ~/rpmbuild/SPECS/mangohud.spec
+    sed -i "/^%build$/i %global build_cflags %{build_cflags} ${ARMADA_MARCH}" ~/rpmbuild/SPECS/mangohud.spec
+    sed -i "/^%build$/i %global build_cxxflags %{build_cxxflags} ${ARMADA_MARCH}" ~/rpmbuild/SPECS/mangohud.spec
     cp /work/patches/*.patch ~/rpmbuild/SOURCES/
     # fetch the upstream tarball
     spectool -g -R ~/rpmbuild/SPECS/mangohud.spec

@@ -80,6 +80,7 @@ Local visualization "mangoplot" for %{name}.
     -Dwith_wayland=enabled \
     -Dwith_xnvctrl=disabled \
     -Dtests=disabled \
+    -Dwith_fex=true \
     %{nil}
 %meson_build
 
