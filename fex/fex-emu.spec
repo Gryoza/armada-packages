@@ -22,7 +22,7 @@
 %global sysroot_version fc44-armada
 
 Name:       fex-emu
-# RPM version sort: 2605^<date>git<sha> > 2605 (release) < 2606 (next release).
+# RPM version sort: 2607^<date>git<sha> > 2607 (release) < 2608 (next release).
 Version:    %{base_version}^%{date}git%{shortcommit}
 Release:    1%{?dist}.armada
 Summary:    Fast usermode x86 and x86-64 emulator for ARM64
@@ -48,13 +48,6 @@ Source6:    build-fex-sysroot.sh
 SourceLicense: %{fex_license} %{sysroot_license}
 %endif
 
-# skipped upstream 0004 (Nix-only).
-Patch1:     0001-fexcore-aarch64-workaround-llvm18-ice.patch
-Patch2:     0002-split-thunk-build-thunkgen-only.patch
-Patch3:     0003-hostlibs-use-sysroot-deps.patch
-Patch4:     0005-host-thunks-aarch64-char-signed-char.patch
-Patch5:     0006-thunkgen-march-armv8-sve.patch
-
 # Bundled dependencies managed as git submodules upstream
 # These are too entangled with the build system to unbundle for now
 # https://github.com/FEX-Emu/FEX/issues/2996
@@ -68,7 +61,7 @@ local externals = {
   { name="drm-headers",     ref="3e49836",   owner="FEX-Emu",        package="kernel",                      version="6.17",     license="GPL-2.0-only"},
   { name="jemalloc",        ref="8436195",   owner="FEX-Emu",        path="jemalloc_glibc",                 version="5.3.0",    license="MIT"},
   { name="range-v3",        ref="ca1388fb9", owner="ericniebler",                                           version="0.12.0",   license="BSL-1.0 AND BSD-3-Clause AND MIT"},
-  { name="rpmalloc",        ref="1f6fb49",   owner="FEX-Emu",                                               version="1.3.0",    license="MIT"},
+  { name="rpmalloc",        ref="1d85c24",   owner="FEX-Emu",                                               version="1.3.0",    license="MIT"},
   { name="Vulkan-Headers",  ref="450bd22",   owner="KhronosGroup",   package="vulkan-headers",              version="1.4.337",  license="Apache-2.0"},
   { name="vixl",            ref="5f41844",   owner="FEX-Emu",                                                                   license="MIT"},
   { name="unordered_dense", ref="3234af2",   owner="martinus",                                                                  license="MIT"},
@@ -222,9 +215,6 @@ This package provides host library thunks for %{name}.
 
 # Unpack bundled libraries
 %{lua: print_setup_externals()}
-
-# patches go after the bundled-lib unpack so autopatch sees the full tree
-%autopatch -p1
 
 # Ensure library soversion is set
 sed -i FEXCore/Source/CMakeLists.txt \
